@@ -1,0 +1,12 @@
+```
+node comprobar-crud.mjs --caso CH-06
+Caso 1: PASS
+Caso 2: PASS
+Caso 3: PASS
+Caso 4: PASS
+Caso 5: PASS
+JOIN con mínimo (adicional): FAIL
+Pruebas HTTP guardadas en D:\Usuarios\wilco\Taquilla\Escuela\Clase\2º DAM (SAN VALERO)\Programación Multimedia\Seis funciones CRUD\ba
+ckend\evidencias\crud-comprobacion.json. Añade también tus comprobaciones SQL.
+Huella del informe: fe759c234e0282202d0039b0ff13a1a44228953435dac44d8d56233bfb74d724
+```

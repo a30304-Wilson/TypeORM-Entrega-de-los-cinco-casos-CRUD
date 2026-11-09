@@ -1,0 +1,49 @@
+```
+API="http://localhost:3000"
+```
+
+```
+curl -i -X POST "$API/gimnasios" \
+  -H 'Content-Type: application/json' \
+  -d '{"nombre":"Principal de prueba"}'
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 132
+ETag: W/"84-dXngyShpRo4/F9RQLFZTM0Hp4a4"
+Date: Mon, 09 Nov 2026 19:08:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"identifiers":[{"id":1}],"generatedMaps":[{"id":1,"nombre":"Principal de prueba"}],"raw":[{"ID":1,"NOMBRE":"Principal de prueba"}]}
+```
+
+```
+curl -i "$API/gimnasios"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 41
+ETag: W/"29-fTo7lYhznUS3Zd24zFLxJxdJ40U"
+Date: Mon, 09 Nov 2026 19:08:47 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":1,"nombre":"Principal de prueba"}]
+```
+
+```
+curl -fLO https://albertohdezakkari.github.io/typeorm-portal-2si-2sid/comprobar-crud.mjs
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9940 100  9940   0     0 23266     0  --:--:-- --:--:-- --:--:-- 23333
+```
+
+```
+curl -fLO https://albertohdezakkari.github.io/typeorm-portal-2si-2sid/crud-contextos.json
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9291 100  9291   0     0 44535     0  --:--:-- --:--:-- --:--:-- 45101
+```

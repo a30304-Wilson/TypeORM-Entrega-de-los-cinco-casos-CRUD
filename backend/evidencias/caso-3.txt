@@ -1,0 +1,68 @@
+```
+API="http://localhost:3000"
+```
+
+```
+curl -i -X POST "$API/gimnasios" \
+  -H 'Content-Type: application/json' \
+  -d '{"nombre":"Principal A"}'
+HTTP/1.1 201 Created
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 116
+ETag: W/"74-eLHAVc4N4dqwM4plTo2RHkugygg"
+Date: Mon, 09 Nov 2026 19:20:59 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"identifiers":[{"id":2}],"generatedMaps":[{"id":2,"nombre":"Principal A"}],"raw":[{"ID":2,"NOMBRE":"Principal A"}]}
+```
+
+```
+read -r -p 'Nuevo principal A (ID real de la respuesta): ' PRINCIPAL_A
+Nuevo principal A (ID real de la respuesta): 2
+```
+
+```
+curl -i -X PATCH "$API/gimnasios/$PRINCIPAL_A" \
+  -H 'Content-Type: application/json' \
+  -d '{"nombre":"Principal A actualizado"}'
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 42
+ETag: W/"2a-mp76xueJwuBg6SC3F/3HJjTMrec"
+Date: Mon, 09 Nov 2026 19:21:20 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"generatedMaps":[],"raw":[],"affected":1}
+```
+
+````
+curl -i "$API/gimnasios"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 45
+ETag: W/"2d-b4CpKkoaYijrtHyxd7A6xgf/1wo"
+Date: Mon, 09 Nov 2026 19:21:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":2,"nombre":"Principal A actualizado"}]
+```
+
+```
+curl -fLO https://albertohdezakkari.github.io/typeorm-portal-2si-2sid/comprobar-crud.mjs
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9940 100  9940   0     0 112094     0  --:--:-- --:--:-- --:--:-- 112954
+```
+
+```
+curl -fLO https://albertohdezakkari.github.io/typeorm-portal-2si-2sid/crud-contextos.json
+```

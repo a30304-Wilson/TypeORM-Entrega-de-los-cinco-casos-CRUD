@@ -1,0 +1,582 @@
+{
+  "format": "crud-trace-v1",
+  "caseId": "CH-06",
+  "context": {
+    "caseId": "CH-06",
+    "principal": "Gimnasio",
+    "dependiente": "Sesion",
+    "parentRoute": "gimnasios",
+    "childRoute": "sesiones",
+    "relation": "gimnasio",
+    "textField": "nombre",
+    "metric": "plazas",
+    "foreignKey": "ID_GIMNASIO"
+  },
+  "startedAt": "2026-11-09T19:35:52.782Z",
+  "timezone": "Europe/Madrid",
+  "origin": "curl ejecutado en equipo del alumno; evidencia aportada pendiente de revisión docente",
+  "cases": [
+    {
+      "id": 1,
+      "status": "PASS",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/gimnasios",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 2,
+              "nombre": "Principal A actualizado"
+            },
+            {
+              "id": 5,
+              "nombre": "Aula-8324dd69 A editado"
+            },
+            {
+              "id": 6,
+              "nombre": "Aula-8324dd69 B"
+            }
+          ]
+        },
+        {
+          "method": "POST",
+          "path": "/gimnasios",
+          "request": {
+            "nombre": "Aula-31060093 temporal"
+          },
+          "status": 201,
+          "response": {
+            "identifiers": [
+              {
+                "id": 7
+              }
+            ],
+            "generatedMaps": [
+              {
+                "id": 7,
+                "nombre": "Aula-31060093 temporal"
+              }
+            ],
+            "raw": [
+              {
+                "ID": 7,
+                "NOMBRE": "Aula-31060093 temporal"
+              }
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/gimnasios",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 2,
+              "nombre": "Principal A actualizado"
+            },
+            {
+              "id": 5,
+              "nombre": "Aula-8324dd69 A editado"
+            },
+            {
+              "id": 6,
+              "nombre": "Aula-8324dd69 B"
+            },
+            {
+              "id": 7,
+              "nombre": "Aula-31060093 temporal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "status": "PASS",
+      "requests": [
+        {
+          "method": "DELETE",
+          "path": "/gimnasios/7",
+          "request": null,
+          "status": 200,
+          "response": {
+            "raw": [],
+            "affected": 1
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/gimnasios",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 2,
+              "nombre": "Principal A actualizado"
+            },
+            {
+              "id": 5,
+              "nombre": "Aula-8324dd69 A editado"
+            },
+            {
+              "id": 6,
+              "nombre": "Aula-8324dd69 B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "status": "PASS",
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/gimnasios",
+          "request": {
+            "nombre": "Aula-31060093 A"
+          },
+          "status": 201,
+          "response": {
+            "identifiers": [
+              {
+                "id": 8
+              }
+            ],
+            "generatedMaps": [
+              {
+                "id": 8,
+                "nombre": "Aula-31060093 A"
+              }
+            ],
+            "raw": [
+              {
+                "ID": 8,
+                "NOMBRE": "Aula-31060093 A"
+              }
+            ]
+          }
+        },
+        {
+          "method": "PATCH",
+          "path": "/gimnasios/8",
+          "request": {
+            "nombre": "Aula-31060093 A editado"
+          },
+          "status": 200,
+          "response": {
+            "generatedMaps": [],
+            "raw": [],
+            "affected": 1
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/gimnasios",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 2,
+              "nombre": "Principal A actualizado"
+            },
+            {
+              "id": 5,
+              "nombre": "Aula-8324dd69 A editado"
+            },
+            {
+              "id": 6,
+              "nombre": "Aula-8324dd69 B"
+            },
+            {
+              "id": 8,
+              "nombre": "Aula-31060093 A editado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "status": "PASS",
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/gimnasios",
+          "request": {
+            "nombre": "Aula-31060093 B"
+          },
+          "status": 201,
+          "response": {
+            "identifiers": [
+              {
+                "id": 9
+              }
+            ],
+            "generatedMaps": [
+              {
+                "id": 9,
+                "nombre": "Aula-31060093 B"
+              }
+            ],
+            "raw": [
+              {
+                "ID": 9,
+                "NOMBRE": "Aula-31060093 B"
+              }
+            ]
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/sesiones",
+          "request": {
+            "nombre": "Aula-31060093 trasladar",
+            "plazas": 90,
+            "gimnasio": {
+              "id": 8
+            }
+          },
+          "status": 201,
+          "response": {
+            "identifiers": [
+              {
+                "id": 5
+              }
+            ],
+            "generatedMaps": [
+              {
+                "id": 5
+              }
+            ],
+            "raw": [
+              {
+                "ID": 5
+              }
+            ]
+          }
+        },
+        {
+          "method": "POST",
+          "path": "/sesiones",
+          "request": {
+            "nombre": "Aula-31060093 conservar",
+            "plazas": 125,
+            "gimnasio": {
+              "id": 8
+            }
+          },
+          "status": 201,
+          "response": {
+            "identifiers": [
+              {
+                "id": 6
+              }
+            ],
+            "generatedMaps": [
+              {
+                "id": 6
+              }
+            ],
+            "raw": [
+              {
+                "ID": 6
+              }
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/sesiones/gimnasio/8",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 5,
+              "nombre": "Aula-31060093 trasladar",
+              "plazas": 90,
+              "gimnasio": {
+                "id": 8,
+                "nombre": "Aula-31060093 A editado"
+              }
+            },
+            {
+              "id": 6,
+              "nombre": "Aula-31060093 conservar",
+              "plazas": 125,
+              "gimnasio": {
+                "id": 8,
+                "nombre": "Aula-31060093 A editado"
+              }
+            }
+          ]
+        },
+        {
+          "method": "PATCH",
+          "path": "/sesiones/5/gimnasio",
+          "request": {
+            "principalId": 9
+          },
+          "status": 200,
+          "response": {
+            "generatedMaps": [],
+            "raw": [],
+            "affected": 1
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/sesiones/gimnasio/8",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 6,
+              "nombre": "Aula-31060093 conservar",
+              "plazas": 125,
+              "gimnasio": {
+                "id": 8,
+                "nombre": "Aula-31060093 A editado"
+              }
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/sesiones/gimnasio/9",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 5,
+              "nombre": "Aula-31060093 trasladar",
+              "plazas": 90,
+              "gimnasio": {
+                "id": 9,
+                "nombre": "Aula-31060093 B"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "status": "PASS",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/sesiones/gimnasio/8",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 6,
+              "nombre": "Aula-31060093 conservar",
+              "plazas": 125,
+              "gimnasio": {
+                "id": 8,
+                "nombre": "Aula-31060093 A editado"
+              }
+            }
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/sesiones/gimnasio/9",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 5,
+              "nombre": "Aula-31060093 trasladar",
+              "plazas": 90,
+              "gimnasio": {
+                "id": 9,
+                "nombre": "Aula-31060093 B"
+              }
+            },
+            {
+              "id": 7,
+              "nombre": "Aula-31060093 segundo B",
+              "plazas": 100,
+              "gimnasio": {
+                "id": 9,
+                "nombre": "Aula-31060093 B"
+              }
+            }
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "/sesiones/gimnasio/9",
+          "request": null,
+          "status": 200,
+          "response": {
+            "raw": [],
+            "affected": 2
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/sesiones/gimnasio/9",
+          "request": null,
+          "status": 200,
+          "response": []
+        },
+        {
+          "method": "GET",
+          "path": "/sesiones/gimnasio/8",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 6,
+              "nombre": "Aula-31060093 conservar",
+              "plazas": 125,
+              "gimnasio": {
+                "id": 8,
+                "nombre": "Aula-31060093 A editado"
+              }
+            }
+          ]
+        },
+        {
+          "method": "DELETE",
+          "path": "/gimnasios/9",
+          "request": null,
+          "status": 200,
+          "response": {
+            "raw": [],
+            "affected": 1
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/gimnasios",
+          "request": null,
+          "status": 200,
+          "response": [
+            {
+              "id": 2,
+              "nombre": "Principal A actualizado"
+            },
+            {
+              "id": 5,
+              "nombre": "Aula-8324dd69 A editado"
+            },
+            {
+              "id": 6,
+              "nombre": "Aula-8324dd69 B"
+            },
+            {
+              "id": 8,
+              "nombre": "Aula-31060093 A editado"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "join": {
+    "id": "JOIN_MINIMO",
+    "status": "FAIL",
+    "graded": false,
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/sesiones/minimo/100",
+        "request": null,
+        "status": 404,
+        "response": {
+          "message": "Cannot GET /sesiones/minimo/100",
+          "error": "Not Found",
+          "statusCode": 404
+        }
+      }
+    ],
+    "reason": "GET /sesiones/minimo/100: HTTP 404"
+  },
+  "cleanup": [
+    {
+      "method": "POST",
+      "path": "/sesiones",
+      "request": {
+        "nombre": "Aula-31060093 segundo B",
+        "plazas": 100,
+        "gimnasio": {
+          "id": 9
+        }
+      },
+      "status": 201,
+      "response": {
+        "identifiers": [
+          {
+            "id": 7
+          }
+        ],
+        "generatedMaps": [
+          {
+            "id": 7
+          }
+        ],
+        "raw": [
+          {
+            "ID": 7
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/gimnasios",
+      "request": null,
+      "status": 200,
+      "response": [
+        {
+          "id": 2,
+          "nombre": "Principal A actualizado"
+        },
+        {
+          "id": 5,
+          "nombre": "Aula-8324dd69 A editado"
+        },
+        {
+          "id": 6,
+          "nombre": "Aula-8324dd69 B"
+        },
+        {
+          "id": 8,
+          "nombre": "Aula-31060093 A editado"
+        }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/sesiones/gimnasio/8",
+      "request": null,
+      "status": 200,
+      "response": {
+        "raw": [],
+        "affected": 1
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/gimnasios/8",
+      "request": null,
+      "status": 200,
+      "response": {
+        "raw": [],
+        "affected": 1
+      }
+    }
+  ],
+  "finishedAt": "2026-11-09T19:35:59.488Z",
+  "functionalPass": true,
+  "commitAtRun": null,
+  "workingTreeClean": null
+}

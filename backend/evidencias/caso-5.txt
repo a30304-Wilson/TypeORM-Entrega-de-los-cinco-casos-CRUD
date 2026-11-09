@@ -1,0 +1,107 @@
+```
+API="http://localhost:3000"
+```
+
+````
+curl -i "$API/sesiones/gimnasio/$PRINCIPAL_B"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 95
+ETag: W/"5f-zW2/lZGxA+cjUqA6dSkUou4ox3E"
+Date: Mon, 09 Nov 2026 19:32:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":1,"nombre":"Registro de prueba","plazas":90,"gimnasio":{"id":3,"nombre":"Principal B"}}]
+```
+
+````
+curl -i -X DELETE "$API/sesiones/gimnasio/$PRINCIPAL_B"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 23
+ETag: W/"17-PVQD/E0HAqMH9FRBYNXdIixTtCA"
+Date: Mon, 09 Nov 2026 19:32:52 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"raw":[],"affected":1}
+```
+
+```
+curl -i "$API/sesiones/gimnasio/$PRINCIPAL_B"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 2
+ETag: W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+Date: Mon, 09 Nov 2026 19:33:06 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[]
+```
+
+```
+curl -i -X DELETE "$API/gimnasios/$PRINCIPAL_B"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 23
+ETag: W/"17-PVQD/E0HAqMH9FRBYNXdIixTtCA"
+Date: Mon, 09 Nov 2026 19:33:17 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"raw":[],"affected":1}
+```
+
+```
+curl -i "$API/gimnasios"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 125
+ETag: W/"7d-ud5SLiHu4VWlVVMHTD/uD9/rIhw"
+Date: Mon, 09 Nov 2026 19:33:29 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[{"id":2,"nombre":"Principal A actualizado"},{"id":5,"nombre":"Aula-8324dd69 A editado"},{"id":6,"nombre":"Aula-8324dd69 B"}]
+```
+
+```
+url -i "$API/sesiones/gimnasio/$PRINCIPAL_A"
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 2
+ETag: W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"
+Date: Mon, 09 Nov 2026 19:33:42 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+[]
+```
+
+```
+curl -fLO https://albertohdezakkari.github.io/typeorm-portal-2si-2sid/comprobar-crud.mjs
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9940 100  9940   0     0 107631     0  --:--:-- --:--:-- --:--:-- 110444
+```
+
+```
+curl -fLO https://albertohdezakkari.github.io/typeorm-portal-2si-2sid/crud-contextos.json
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  9291 100  9291   0     0 123957     0  --:--:-- --:--:-- --:--:-- 127273
+```
